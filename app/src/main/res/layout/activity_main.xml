@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:layout_weight="10"
+    android:keepScreenOn="true"
+    >
+
+
+<!--&lt;!&ndash;    <androidx.coordinatorlayout.widget.CoordinatorLayout&ndash;&gt;-->
+<!--&lt;!&ndash;        xmlns:android="http://schemas.android.com/apk/res/android"&ndash;&gt;-->
+<!--&lt;!&ndash;        xmlns:app="http://schemas.android.com/apk/res-auto"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="0dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_weight="9.9">&ndash;&gt;-->
+<!--        <com.google.android.material.appbar.AppBarLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/Appbar">-->
+<!--            <include-->
+<!--                android:id="@+id/toolbarsss"-->
+<!--                layout="@layout/custom_toolbar"/>-->
+<!--            <ProgressBar-->
+<!--                android:id="@+id/progress"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="3dp"-->
+<!--                style="@style/Widget.AppCompat.ProgressBar.Horizontal"-->
+
+<!--                android:background="@color/googlegrey"-->
+<!--                android:theme="@style/progress"-->
+<!--                />-->
+<!--        </com.google.android.material.appbar.AppBarLayout>-->
+<!--        <androidx.core.widget.NestedScrollView-->
+
+<!--            android:id="@+id/scroll"-->
+
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="fill_vertical"-->
+<!--            app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+
+<!--            <WebView-->
+<!--                android:descendantFocusability="blocksDescendants"-->
+<!--                android:id="@+id/web_view"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+
+<!--                 />-->
+<!--        </androidx.core.widget.NestedScrollView>-->
+<!--&lt;!&ndash;    </androidx.coordinatorlayout.widget.CoordinatorLayout>&ndash;&gt;-->
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:gravity="center"
+    android:background="@color/white"
+    android:orientation="horizontal">
+    <ImageButton
+        android:id="@+id/home"
+        android:background="@drawable/ripple"
+        android:contentDescription="@string/click_this_to_go_on_previous_page"
+        android:padding="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginVertical="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/home"
+        />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_weight="10"
+        android:layout_height="match_parent"
+        >
+        <EditText
+            android:inputType="textWebEmailAddress"
+            android:id="@+id/urll"
+            android:layout_width="fill_parent"
+            android:paddingVertical="8dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="42dp"
+            android:layout_marginHorizontal="2dp"
+            android:layout_marginVertical="10dp"
+            android:layout_height="match_parent"
+            android:hint="@string/enter_url"
+
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray"
+            android:minHeight="48dp"
+            android:background="@drawable/edit_txt"
+            android:imeOptions="flagNoFullscreen|actionSearch"
+            android:importantForAutofill="noExcludeDescendants"
+            />
+
+
+        <ImageButton
+
+            android:id="@+id/cross"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/cross"
+
+            />
+
+    </FrameLayout>
+
+    <ImageButton
+        android:id="@+id/search"
+        android:padding="20dp"
+        android:contentDescription="@string/this_is_a_search_button"
+        android:layout_marginVertical="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="false"
+        android:background="@drawable/ripple"
+        android:src="@drawable/search" />
+</LinearLayout>
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:scaleY="0.5"
+        android:background="@color/googlegrey"
+        android:theme="@style/progress"
+        />
+
+<!--  can do this to make small in horizontal so progress bar don't take full width     android:scaleX="0.1"-->
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipe_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1">
+        <WebView
+            android:id="@+id/web_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white">
+        <ImageButton
+            android:id="@+id/backButton"
+            android:background="@drawable/ripple"
+            android:contentDescription="@string/click_this_to_go_on_previous_page"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/arrow_left"
+            />
+        <ImageButton
+            android:id="@+id/frontButton"
+            android:background="@drawable/ripple"
+            android:contentDescription="@string/click_this_to_go_on_next_page_previously_opened"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="65dp"
+            android:src="@drawable/arrow_right"
+            />
+
+
+        <ImageButton
+            android:contentDescription="@string/bookmark_to_view_later"
+            android:id="@+id/bookmark"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ripple"
+            android:src="@drawable/ic_bookmarki" />
+
+<!--        <ImageButton-->
+<!--            android:contentDescription="@string/show_history"-->
+<!--            android:id="@+id/menu"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/ripple"-->
+<!--            android:layout_weight="1"-->
+<!--            android:minHeight="65dp"-->
+<!--            android:src="@drawable/menuu" />-->
+        <ImageButton
+            android:contentDescription="@string/show_history"
+            android:id="@+id/meu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple"
+            android:layout_weight="1"
+            android:minHeight="65dp"
+            android:src="@drawable/menuu" />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
