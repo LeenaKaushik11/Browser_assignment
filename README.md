@@ -1,0 +1,6 @@
+# browser_assignment
+Browser App to get familiar with idea of various concepts of android development.
+- Features:
+- Bookmarks, History using SQLite database
+- Use of shared preferences in settings
+- Broadcast Reciever to check status of connection
